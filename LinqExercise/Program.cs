@@ -7,7 +7,7 @@ namespace LinqExercise
     class Program
     {
         //Static array of integers
-        private static int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+        private static int[] numberListAbove = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 
         static void Main(string[] args)
         {
@@ -25,13 +25,57 @@ namespace LinqExercise
 
             //Print the Sum and Average of numbers
 
+            Console.WriteLine(numberListAbove.Sum());
+            Console.WriteLine("------------------");
+            Console.WriteLine(numberListAbove.Average());
+
+
+
             //Order numbers in ascending order and decsending order. Print each to console.
+
+            var ascendOrder = numberListAbove.OrderBy(item => item);
+
+            Console.WriteLine("------------------");
+
+            foreach (var ascenOutcome in ascendOrder)
+            {
+                Console.WriteLine($"{ascenOutcome},");
+            }
+
+            var descendOrder = numberListAbove.OrderByDescending(item2 => item2);
+
+            Console.WriteLine("------------------");
+
+            foreach (var descenOutcome in descendOrder)
+            {
+                Console.WriteLine($"{descenOutcome},");
+            }
+
 
             //Print to the console only the numbers greater than 6
 
+            var numIsMoreThan6 = numberListAbove.Where(num => num > 6);
+
+            Console.WriteLine("----");
+
+            foreach (var moreThanOutcome in numIsMoreThan6)
+            {
+                Console.WriteLine(moreThanOutcome);
+            }
+            Console.WriteLine("----");
+
             //Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
 
+            foreach ( var onlyOrderBy4 in ascendOrder.Take(4))
+            {
+                Console.WriteLine(onlyOrderBy4);
+
+            }
+
+
             //Change the value at index 4 to your age, then print the numbers in decsending order
+
+
 
             // List of employees ***Do not remove this***
             var employees = CreateEmployees();
