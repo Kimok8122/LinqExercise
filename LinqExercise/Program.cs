@@ -71,10 +71,27 @@ namespace LinqExercise
                 Console.WriteLine(onlyOrderBy4);
 
             }
-
+            Console.WriteLine("----");
 
             //Change the value at index 4 to your age, then print the numbers in decsending order
 
+            numberListAbove.SetValue(45, 4);
+
+            var descendWithAge = numberListAbove.OrderByDescending(num => num);
+
+            foreach (var descWithAgeOutcome in descendWithAge)
+            {
+                Console.WriteLine(descWithAgeOutcome);
+            }
+
+            var aescendWithAge = numberListAbove.OrderBy(num => num);
+
+            Console.WriteLine("----");
+
+            foreach (var adscWithAgeOutcome in aescendWithAge)
+            {
+                Console.WriteLine(adscWithAgeOutcome);
+            }
 
 
             // List of employees ***Do not remove this***
